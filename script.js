@@ -15,8 +15,8 @@ addTask.onclick = function () {
     <div class="task">
         <span id="task-name">${newTaskInput.value}</span>
         <div class="btn-task">
-            <button class="button-action edit-task">
-                <i class="fa-solid fa-pen-to-square"></i>
+            <button class="button-action done-task">
+            <i class="fa-solid fa-check"></i>
             </button>
             <button class="button-action delete-task">
                 <i class="fa-solid fa-trash"></i> 
@@ -35,22 +35,13 @@ addTask.onclick = function () {
     };
   }
 
-  // Edit task
-
-  let edit_task = document.querySelectorAll(".edit-task");
-
-  for (var i = 0; i < edit_task.length; i++) {
-    edit_task[i].onclick = function () {
-      //   this.parentNode.parentNode.e;
-    };
-  }
-
-  let tasks = document.querySelectorAll(".task");
+  //   let tasks = document.querySelectorAll(".task");
+  let tasks = document.querySelectorAll(".done-task");
 
   // Cross done task
   for (var i = 0; i < tasks.length; i++) {
     tasks[i].onclick = function () {
-      this.classList.toggle("completed");
+      this.parentNode.parentNode.classList.toggle("completed");
     };
   }
 
